@@ -2,7 +2,7 @@ package br.com.gilvansfilho.spi.authenticator;
 
 import java.util.Random;
 
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response;
 
 import org.keycloak.authentication.AuthenticationFlowContext;
 import org.keycloak.authentication.AuthenticationFlowError;
