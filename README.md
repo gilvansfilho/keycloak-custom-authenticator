@@ -1,18 +1,27 @@
 # Custom Authenticator for Keycloak
 
-A custom base authenticator for keycloak.
+A custom base authenticator for Red Hat Build of Keycloak.
 
-You should need to:
+> To use with the  upstream(community) version, update the dependencies in pom.xml
 
-1. make a copy of `browser` authenticator flow and add this authenticator 
+Build the package
+```
+mvn clean package
+```
+
+Copy the generated jar file (`./target/keycloak-custom-authenticator-1.0.0.jar`) to `{rhbk_home}/providers` folder.
+
+To configure, after start keycloak should need to:
+
+1. make a copy (duplicate) of `browser` authenticator flow and add this authenticator 
 as new execution at `Custom Browser Flow Forms`
 
-![My animated logo](doc/authentication-flow.png)
+![authentication-flow](doc/authentication-flow.png)
 
-2. create a config for this execution with some alias
+2. Create a config for this execution with some alias
 
-![My animated logo](doc/authenticator-config.png)
+![authenticator-config](doc/authenticator-config.png)
 
 3. Config this new flow to be used as browser flow at realm or your client
 
-![My animated logo](doc/binding.png)
+![Binding flow](doc/binding.png)
